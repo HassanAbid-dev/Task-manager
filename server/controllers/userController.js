@@ -54,6 +54,4 @@ export const logoutUser = (req, res) => {
   res.clearCookie("token");
   res.status(200).json({ message: "Logged out successfully" });
 };
-export const getTasks = async (req, res) => {
-  res.send("Get tasks for user: " + req.user.name);
-};
+
