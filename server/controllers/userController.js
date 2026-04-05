@@ -19,7 +19,10 @@ export const registerUser = async (req, res) => {
       secure: process.env.NODE_ENV === "production",
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
-    res.status(201).json({ message: "Registered successfully" });
+    res.status(201).json({
+      message: "Registered successfully",
+      user: { id: user._id, name: user.name, email: user.email },
+    });
   } catch (error) {
     console.error("Error registering user:", error);
     res.status(500).json({ message: "Server error" });
@@ -44,7 +47,12 @@ export const loginUser = async (req, res) => {
       secure: process.env.NODE_ENV === "production",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
-    res.status(200).json({ message: "Logged in successfully" });
+    res
+      .status(200)
+      .json({
+        message: "Logged in successfully",
+        user: { id: user._id, name: user.name, email: user.email },
+      });
   } catch (error) {
     console.error("Error logging in user:", error);
     res.status(500).json({ message: "Server error" });
@@ -55,3 +63,15 @@ export const logoutUser = (req, res) => {
   res.status(200).json({ message: "Logged out successfully" });
 };
 
+export const getMe = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select("-password"); // exclude password
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    console.error("Error fetching user:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
