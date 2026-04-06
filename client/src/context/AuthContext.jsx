@@ -28,12 +28,16 @@ export const AuthProvider = ({ children }) => {
     setUser(res.data.user); // we can set user here because after registration, the server sends a cookie with the token, and when we make the next request to getMe, it will return the user data. Alternatively, we could call userAuthenticated() here to fetch the user data immediately after registration.
   };
   const login = async (email, password) => {
-    await axiosInstance.post("/auth/user/login", {
-      email,
-      password,
-    });
-    const res = await axiosInstance.get("/auth/user/me");
-    setUser(res.data.user);
+    try {
+      await axiosInstance.post("/auth/user/login", {
+        email,
+        password,
+      });
+      const res = await axiosInstance.get("/auth/user/me");
+      setUser(res.data);
+    } catch (error) {
+      throw error; // re-throw the error so that the calling component can handle it
+    }
   };
   const logout = async () => {
     await axiosInstance.post("/auth/user/logout");

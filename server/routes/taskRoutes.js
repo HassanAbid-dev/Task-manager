@@ -1,5 +1,6 @@
 import {
   getTasks,
+  getTaskById,
   createTask,
   updateTask,
   deleteTask,
@@ -8,6 +9,7 @@ import express from "express";
 import { authenticated } from "../middlewares/auth.js";
 const router = express.Router();
 router.get("/getTasks", authenticated, getTasks);
+router.get("/getTask/:id", authenticated, getTaskById);
 router.post("/createTask", authenticated, createTask);
 router.put("/updateTask/:id", authenticated, updateTask);
 router.delete("/deleteTask/:id", authenticated, deleteTask);

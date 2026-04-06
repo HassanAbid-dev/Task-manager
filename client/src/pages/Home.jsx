@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+    <div className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -11,11 +11,11 @@ export default function Home() {
           <div className="space-y-8">
             <div>
               <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-4">
-                <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                   Organize Your
                 </span>
                 <br />
-                <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
                   Tasks Effortlessly
                 </span>
               </h1>
@@ -28,8 +28,8 @@ export default function Home() {
 
             <div className="flex gap-4 pt-4">
               <Link
-                to="/signup"
-                className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 rounded-lg font-semibold text-white transition-all duration-300 shadow-lg hover:shadow-indigo-500/50"
+                to="/register"
+                className="px-8 py-4 bg-linear-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 rounded-lg font-semibold text-white transition-all duration-300 shadow-lg hover:shadow-indigo-500/50"
               >
                 Get Started Free
               </Link>
@@ -55,10 +55,10 @@ export default function Home() {
           <div className="hidden md:flex justify-center">
             <div className="relative w-80 h-80">
               {/* Animated background circles */}
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-3xl blur-3xl"></div>
+              <div className="absolute inset-0 bg-linear-to-br from-indigo-500/20 to-purple-500/20 rounded-3xl blur-3xl"></div>
 
               {/* Main card */}
-              <div className="absolute inset-8 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-indigo-500/30 rounded-2xl p-6 space-y-4">
+              <div className="absolute inset-8 bg-linear-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-indigo-500/30 rounded-2xl p-6 space-y-4">
                 <div className="h-3 bg-indigo-500/30 rounded-full w-3/4"></div>
                 <div className="h-3 bg-purple-500/30 rounded-full w-full"></div>
                 <div className="h-3 bg-indigo-500/30 rounded-full w-5/6"></div>
@@ -84,11 +84,11 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-r from-indigo-950/50 to-purple-950/50 border-y border-indigo-500/20">
+      <section className="py-20 md:py-32 bg-linear-to-r from-indigo-950/50 to-purple-950/50 border-y border-indigo-500/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Ready to Transform Your{" "}
-            <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
               Productivity?
             </span>
           </h2>
@@ -98,7 +98,7 @@ export default function Home() {
           </p>
           <Link
             to="/signup"
-            className="inline-block px-10 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 rounded-lg font-semibold text-white transition-all duration-300 shadow-lg hover:shadow-indigo-500/50"
+            className="inline-block px-10 py-4 bg-linear-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 rounded-lg font-semibold text-white transition-all duration-300 shadow-lg hover:shadow-indigo-500/50"
           >
             Get Started Free
           </Link>

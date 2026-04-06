@@ -30,6 +30,16 @@ const Navbar = () => {
               <span className="absolute bottom-0 left-0 w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-300"></span>
             </Link>
 
+            {user && (
+              <Link
+                to="/dashboard"
+                className="text-gray-300 hover:text-white font-medium transition-colors duration-200 relative group"
+              >
+                Dashboard
+                <span className="absolute bottom-0 left-0 w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-300"></span>
+              </Link>
+            )}
+
             {!user ? (
               <>
                 <Link
@@ -39,7 +49,7 @@ const Navbar = () => {
                   Login
                 </Link>
                 <Link
-                  to="/signup"
+                  to="/register"
                   className="px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all duration-200 font-medium"
                 >
                   Sign Up
@@ -97,6 +107,14 @@ const Navbar = () => {
             >
               Home
             </Link>
+            {user && (
+              <Link
+                to="/dashboard"
+                className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-indigo-500/10 rounded-lg transition-colors font-medium"
+              >
+                Dashboard
+              </Link>
+            )}
             <div className="pt-2 border-t border-indigo-500/20 space-y-2">
               {!user ? (
                 <>

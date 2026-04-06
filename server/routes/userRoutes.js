@@ -10,7 +10,7 @@ import {
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
-router.get("/logout", authenticated, logoutUser);
+router.post("/logout", logoutUser);
 router.get("/me", authenticated, getMe);
 
 export default router;
