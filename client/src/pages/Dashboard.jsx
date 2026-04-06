@@ -34,7 +34,6 @@ const Dashboard = () => {
       );
     } catch (error) {
       console.error("Error updating task:", error);
-      res.status(500).json({ message: "Error updating task" });
     }
   };
 
