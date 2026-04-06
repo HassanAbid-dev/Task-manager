@@ -10,7 +10,7 @@ const Task = ({ task, onToggle, onDelete }) => {
         <input
           type="checkbox"
           checked={task.completed}
-          onChange={() => onToggle(task._id, task.completed)}
+          onChange={() => onToggle(task._id)}
           className="w-5 h-5 accent-indigo-600 cursor-pointer"
         />
         {/* title — strikethrough if completed */}

@@ -3,6 +3,7 @@ import axiosInstance from "../api/axiosInstance";
 const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -10,6 +11,7 @@ export const AuthProvider = ({ children }) => {
       try {
         const res = await axiosInstance.get("/auth/user/me");
         setUser(res.data);
+        setIsAuthenticated(true);
         setLoading(false);
       } catch (error) {
         setUser(null);
@@ -44,7 +46,9 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
+    <AuthContext.Provider
+      value={{ user, loading, isAuthenticated, login, register, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );
