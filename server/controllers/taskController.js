@@ -37,7 +37,7 @@ export const createTask = async (req, res) => {
     const userId = req.user._id;
     const newTask = new Task({ title, description, user: userId });
     await newTask.save();
-    res.status(201).json(newTask).message("Task created");
+    res.status(201).json({ newTask, message: "Task Created" });
   } catch (error) {
     console.error("Error creating task:", error);
     res.status(500).json({ message: "Server error" });
